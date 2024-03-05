@@ -1,8 +1,8 @@
-export default function Question() {
+export default function SorteioPremio() {
     return (
         <div>
             <h1>
-                Question
+                SorteioPremio
             </h1>
         </div>
     )

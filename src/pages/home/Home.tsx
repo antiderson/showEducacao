@@ -20,7 +20,7 @@ export default function Home() {
                 </h1>
                 <ButtonNext
                     title="Inicar"
-                    link={''} />
+                    link="rdStation" />
 
                 <CardResposta
                     content='Rio de Janeiro'
