@@ -1,6 +1,5 @@
-import ButtonNext from '../../components/buttonNext/Button'
-import CardResposta from '../../components/cardResposta/CardResposta'
-// import './home.css'
+import ButtonNext from '../../components/buttonNext/ButtonNext'
+import styles from './index.module.css'
 
 export default function Home() {
     // const stylepage = {
@@ -11,22 +10,19 @@ export default function Home() {
     //     backgroundRepeat: 'no-repeat' // Adicionado para evitar a repetição da imagem de fundo
     // }
 
-
     return (
-        <>
-            <div >
-                <h1>
-                    Show da Educação
-                </h1>
-                <ButtonNext
-                    title="Inicar"
-                    link="rdStation" />
+        <div className={styles.cont} >
+            <h1 className={styles.title}>
+                SHOW DA EDUCAÇÃO
+            </h1>
+            <ButtonNext 
+                title="INICIAR"
+                link="rdStation" />
 
-                <CardResposta
+            {/* <CardResposta
                     content='Rio de Janeiro'
                     background=''
-                    correto={false} />
-            </div>
-        </>
+                    correto={false} /> */}
+        </div>
     )
 }

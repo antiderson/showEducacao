@@ -1,18 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import RdStation from './pages/rdStation/RdStation.tsx'
 import GameOver from './pages/gameOver/GameOver.tsx'
 import Question from './pages/question/Question.tsx'
 import SorteioPremio from './pages/sorteioPremio/SorteioPremio.tsx'
 import TelaVencedor from './pages/telaVencedor/TelaVencedor.tsx'
+import Home from './pages/home/Home.tsx'
+import TelaDificuldade from './pages/telaDificuldade/TelaDificuldade.tsx'
 // import './index.css'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Home />,
   },
   {
     path: '/rdStation',
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: '/WINNER',
     element: <TelaVencedor />
+  },
+  {
+    path: '/dificuldade',
+    element: <TelaDificuldade />
   }
 ])
 
