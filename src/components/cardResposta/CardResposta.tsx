@@ -1,29 +1,36 @@
+import React, { useState } from 'react';
+
 interface CardRespostaProps {
     content: string;
-    background: string;
-    correto: boolean;
-    //verificar se é aqui ou nao q seta ele como certo ou errado
+    correta: boolean;
+    onClick: () => void;
 }
 
-const CardResposta: React.FC<CardRespostaProps> = ({ content, background }) => {
-    const cardStyle = {
-        background: background,
-        correto : false,
+const CardResposta: React.FC<CardRespostaProps> = ({ content, correta, onClick }) => {
+    const [selecionado, setSelecionado] = useState<boolean>(false);
+
+    const handleClick = () => {
+        if (!selecionado) {
+            setSelecionado(true);
+            onClick();
+        }
     };
-    const cardResposta = {
-        width: '100%',
-        height: '80px',
-        borderStyle: 'solid ',
-        borderRadius: '10px',
-        color: 'black',
-    };
+
     return (
-        <button style={cardResposta}>
-            <section style={cardStyle}>
-                <h2>{content}</h2>
-            </section>
+        <button 
+            
+            onClick={handleClick}
+            style={{
+                // backgroundColor: selecionado ? (correta ? 'lightgreen' : 'red') : 'white',
+                width: '100%',
+                height: '80px',
+                borderStyle: 'solid ',
+                borderRadius: '10px',
+                color: 'black',
+            }}>
+            <h2>{content}</h2>
         </button>
-    )
-}
+    );
+};
 
 export default CardResposta;

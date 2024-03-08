@@ -11,7 +11,7 @@ export default function TelaDificuldade() {
                 <div className={styles.listdifc}>
                     <CardDificuldade
                         title="Fácil"
-                        link="" />
+                        link="question" />
                     <CardDificuldade
                         title="Intermediário"
                         link="" />
