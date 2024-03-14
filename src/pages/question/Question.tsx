@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CardResposta from '../../components/cardResposta/CardResposta';
-import questoes from '../../services/Questoes'; // Importando o arquivo TypeScript
+import questoes from '../../services/Questoes';
 
 interface Questao {
     id: number;
@@ -41,6 +41,16 @@ export default function Question() {
             setIndiceAtual(indiceAtual + 1);
         } else {
             alert('Você respondeu todas as perguntas!');
+
+            // Verifica se todas as respostas estão corretas
+            const todasCorretas = perguntasSelecionadas.every((questao) =>
+                questao.alternativas.some((alternativa) => alternativa.correta)
+            );
+
+            // Se todas estiverem corretas, redireciona para outra tela
+            if (todasCorretas) {
+                window.location.href = '/outra-rota'; // Substitua '/outra-rota' pela rota desejada
+            }
         }
     };
 
