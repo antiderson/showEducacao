@@ -1,0 +1,40 @@
+.al {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conte {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    background-image: url("../../../../assets/printTelas/popSwaPay.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn {
+    position: absolute;
+    top: 4%;
+    left: 99%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn2{
+    position: absolute;
+    top: 44%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}

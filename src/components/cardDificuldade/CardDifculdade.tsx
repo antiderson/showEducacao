@@ -3,7 +3,7 @@ import styles from './index.module.css'
 
 interface CardDificuldadeProps {
     title: string;
-    link: string;
+    link?: string;
 }
 
 const CardDificuldade: React.FC<CardDificuldadeProps> = ({ title, link }) => {

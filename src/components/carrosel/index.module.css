@@ -1,0 +1,119 @@
+.cont {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 2%;
+    overflow-x: auto;
+}
+
+.carrossel {
+    /* max-height: 300px; */
+    display: flex;
+    overflow-x: auto;
+    /* height: 306px; */
+    /* left: 67px; */
+    /* overflow: hidden; */
+    /* flex-direction: row; */
+    /* position: absolute;  */
+    /* top: 289px; */
+    /* overflow-x: auto; */
+    width: 100%;
+}
+
+.text14 {
+    color: #404040;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 34.3px;
+    font-weight: 600;
+}
+
+.text13 {
+    color: #646464;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    margin-bottom: 25px;
+    font-size: 33.3px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.imageCarrossel1 {
+    margin-right: 1%;
+    background-image: url(https://c.animaapp.com/aWVWcLPC/img/ideias-para-um-local-de-trabalho-sem-papel-assinaturas-eletronic.png);
+    background-size: cover;
+    border-radius: 10px;
+    min-width: 35%;
+}
+
+.rectangle {
+    background: linear-gradient(180deg,
+            rgba(217, 217, 217, 0) 0%,
+            rgba(152.46, 218.07, 100.91, 0.36) 80.5%,
+            rgba(96.36, 219, 0, 0.67) 100%);
+    border-radius: 10px;
+    height: 290px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.teste {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3%;
+}
+
+.buttonLink {
+    background-color: #ffffff9b;
+    border: none;
+    border-radius: 20px;
+    color: #646464;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 50px;
+    width: 100px;
+    text-decoration: none;
+}
+
+.jacadBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0e4713;
+    border-radius: 13.13px;
+    height: 53px;
+    width: 60px;
+    background-size: auto;
+    margin-left: 5%;
+}
+
+.logo {
+    height: 35px;
+    width: 28px;
+}
+
+.title {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 17.7px;
+    font-weight: 600;
+    line-height: normal;
+}
+.subt{
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 15.7px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.inf {
+    width: 57%;
+    margin-left: 3%;
+}
+
+.carrossel::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+}

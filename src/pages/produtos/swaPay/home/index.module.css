@@ -1,0 +1,47 @@
+.al {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conte {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    background-image: url("../../../../assets/printTelas/homeSwaPay.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn {
+    position: absolute;
+    top: 4%;
+    /* Ajusta a posição vertical do botão */
+    left: 99%;
+    /* Ajusta a posição horizontal do botão */
+    transform: translate(-50%, -50%);
+    /* Centraliza o botão */
+    width: 50px;
+    /* Ajuste o tamanho do botão conforme necessário */
+    height: 20px;
+    /* Ajuste o tamanho do botão conforme necessário */
+    /* background: transparent; */
+    /* Torna o botão invisível */
+    border: none;
+    cursor: pointer;
+}
+
+.btn2{
+    position: absolute;
+    top: 7%;
+    left: 21%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}

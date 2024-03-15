@@ -1,7 +1,7 @@
 import CardDificuldade from "../../components/cardDificuldade/CardDifculdade";
 import styles from './index.module.css'
 
-export default function TelaDificuldade() {
+export default function TelaDificuldadeMedio() {
     return (
         <div className={styles.containerMain}>
             <div className={styles.containerSec}>
@@ -11,11 +11,11 @@ export default function TelaDificuldade() {
                 <div className={styles.listdifc}>
                     <CardDificuldade
                         title="Fácil"
-                        link="easy-question" />
+                         />
                     <CardDificuldade
                         title="Intermediário"
-                        link="" />
-                        <CardDificuldade
+                        link="medium-question" />
+                    <CardDificuldade
                         title="Difícil"
                         link="" />
                 </div>
