@@ -1,0 +1,31 @@
+.background{
+    height: 100vh;
+    background-image: url('../../assets/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.logo{
+    padding-top: 3%;
+    width: 100%;
+    max-width: 1200px;
+    margin:  auto;
+    display: block;
+}
+
+.init{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnInit{
+    font-size:45px;
+    font-weight: bold;
+    background-color:#ffa013;
+    height: 75px;
+    width: 200px;
+    color: #ffff;
+    border: none;
+    border-radius: 10px;
+}

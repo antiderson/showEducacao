@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './index.module.css'
 
 interface CardRespostaProps {
     content: string;
@@ -17,18 +18,8 @@ const CardResposta: React.FC<CardRespostaProps> = ({ content, correta, onClick }
     };
 
     return (
-        <button 
-            
-            onClick={handleClick}
-            style={{
-                // backgroundColor: selecionado ? (correta ? 'lightgreen' : 'red') : 'white',
-                width: '100%',
-                height: '80px',
-                borderStyle: 'solid ',
-                borderRadius: '10px',
-                color: 'black',
-            }}>
-            <h2>{content}</h2>
+        <button className={styles.cardResp} onClick={handleClick}>
+            <h2 className={styles.textResp}>{content}</h2>
         </button>
     );
 };

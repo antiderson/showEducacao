@@ -1,0 +1,12 @@
+.cardResp{
+      background-color: #495d5c;
+      width: 70%;
+      height: 70px;
+      border: none;
+      border-radius: 10px;
+  }
+
+  .textResp{
+    color: #ffff;
+    font-size: 3rem;
+  }

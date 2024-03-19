@@ -1,31 +1,42 @@
 .containerMain {
-    padding-bottom: 60px;
-    display: flex;
+    background-image: url('../../assets/background.png');
+    background-position: center;
+    background-size: cover;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #a8a8a8;
+    display: flex;
+    align-items: center;
 }
 
 .containerSec {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 40px;
+    border: 2px solid #ffffff80;
     display: flex;
     flex-direction: column;
-    width: 30%;
-    height: 100vh;
+    width: 40%;
+    height: 40%;
+    padding: 2% 4% 2% 4%;
+    box-shadow: 0 0 5px #595959;
 }
 
-.fases{
+.fases {
     display: flex;
-    margin-top: 30%;
-    padding-bottom: 10%;
     justify-content: center;
     font-size: 5rem;
     color: white
 }
 
-.listdifc{
+.logo{
+    margin-top: 6%;
+    width: 98%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
+}
+.logoProj{
+    height: 150px;
+    margin-top: 30px;
 }

@@ -11,15 +11,14 @@ interface ButtonNextProps {
 
 
 const ButtonNext: React.FC<ButtonNextProps> = ({ title, link }) => {
-    const buttonStyle = {
-        // background: '#00B8DB',
-        // width: '120px',
-        // height: '80px',
-        // borderRadius: '10px',
-        // color: 'white',
-        // textAlign: 'center',
-
-    };
+    // const buttonStyle = {
+    // background: '#00B8DB',
+    // width: '120px',
+    // height: '80px',
+    // borderRadius: '10px',
+    // color: 'white',
+    // textAlign: 'center',
+    // };
 
     return (
         <>
