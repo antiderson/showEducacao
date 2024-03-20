@@ -1,6 +1,3 @@
-import ButtonNext from '../../components/buttonNext/ButtonNext'
-import styles from './index.module.css'
-import React from 'react'
 import "./style.css";
 import HeaderMain from '../../components/headerMain.tsx/HeaderMain';
 import Carrossel from '../../components/carrosel/Carrossel';

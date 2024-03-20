@@ -7,7 +7,7 @@ interface CardRespostaProps {
     onClick: () => void;
 }
 
-const CardResposta: React.FC<CardRespostaProps> = ({ content, correta, onClick }) => {
+const CardResposta: React.FC<CardRespostaProps> = ({ content, onClick }) => {
     const [selecionado, setSelecionado] = useState<boolean>(false);
 
     const handleClick = () => {
