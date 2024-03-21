@@ -50,7 +50,7 @@ export default function QuestionEasy() {
 
             // Se todas estiverem corretas, redireciona para outra tela
             if (todasCorretas) {
-                window.location.href = '/continue'; // Substitua '/outra-rota' pela rota desejada
+                window.location.href = '/continue';
             }
         }
     };

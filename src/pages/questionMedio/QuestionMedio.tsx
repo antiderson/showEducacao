@@ -2,6 +2,8 @@ import { useState } from "react";
 import CardResposta from "../../components/cardResposta/CardResposta";
 import React from "react";
 import questoes from "../../services/Questoes";
+import styles from '../question/index.module.css'
+import logo from '../../assets/logo-game.png'
 
 interface QuestionMedio {
     id: number;
@@ -35,7 +37,6 @@ export default function QuestionMedio() {
                 }
             }
         }
-
         setPerguntasSelecionadas(perguntasAleatorias);
     };
 
@@ -50,7 +51,7 @@ export default function QuestionMedio() {
             );
 
             if (todasCorretas) {
-                window.location.href = '/dificuldade-dificil';
+                window.location.href = '/continue-hard';
             }
         }
     };
@@ -60,34 +61,40 @@ export default function QuestionMedio() {
             return null;
         }
         return (
-            <div key={questaoAtual.id}>
-                <h2>{questaoAtual.enunciado}</h2>
-                {questaoAtual.alternativas.map((alternativa) => (
-                    <CardResposta
-                        key={alternativa.id}
-                        content={alternativa.texto}
-                        onClick={() => {
-                            if (alternativa.correta) {
-                                console.log('Resposta correta');
-                            } else {
-                                console.log('Resposta errada');
-                            }
-                        }}
-                        correta={alternativa.correta}
-                    />
-                ))}
-                <button onClick={proximaQuestao}>Próxima Questão</button>
+            <div className={styles.all} key={questaoAtual.id}>
+                <div className={styles.cont}>
+                    <h2 className={styles.enunc}>{questaoAtual.enunciado}</h2>
+                    {questaoAtual.alternativas.map((alternativa) => (
+                        <CardResposta
+                            key={alternativa.id}
+                            content={alternativa.texto}
+                            onClick={() => {
+                                if (alternativa.correta) {
+                                    console.log('Resposta correta');
+                                } else {
+                                    console.log('Resposta errada');
+                                }
+                            }}
+                            correta={alternativa.correta}
+                        />
+                    ))}
+                </div>
+                <div className={styles.endLine}>
+                    <div className={styles.testediv}>
+                        <button className={styles.btnN} onClick={proximaQuestao}>Próxima Questão</button>
+                        <img src={logo} alt="logo do jogo" className={styles.logoProj} />
+                    </div>
+                </div>
             </div>
         );
     };
 
-    React.useEffect(() =>{
+    React.useEffect(() => {
         selecionarPerguntasAleatorias(questoes.medio, 5);
     }, []);
 
     return (
         <div>
-            <h1>Questão Media</h1>
             {renderQuestaoAtual()}
         </div>
     )

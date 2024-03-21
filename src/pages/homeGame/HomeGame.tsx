@@ -8,22 +8,13 @@ export default function HomeGame() {
         <div className={styles.background}>
             <img src={logo} alt="logo do jogo" className={styles.logo} />
             <div className={styles.init}>
-                <Link to='/rdStation'>
-                    <button className={styles.btnInit}>
-                        Começar
-                    </button>
-                </Link>
-                <img src={SwaLogo} alt="logo do grupo" className={styles.logoGroup} />
+                <div className={styles.testediv}>
+                    <Link to='/rdStation'>
+                        <button className={styles.btnInit}>Começar</button>
+                    </Link>
+                    <img src={SwaLogo} alt="logo do grupo" className={styles.logoGroup} />
+                </div>
             </div>
         </div>
     )
 }
-
-{/* <div className={styles.endLine}>
-        <div className={styles.testediv}>
-            <Link to='/dificuldade'>
-                <button className={styles.btn}>Próximo</button>
-            </Link>
-            <img src={logo} alt="logo do jogo" className={styles.logoProj} />
-        </div>
-    </div> */}

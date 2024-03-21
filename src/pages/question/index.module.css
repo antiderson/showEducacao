@@ -14,17 +14,19 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    /* background-color: rgb(145, 162, 162); */
-    width: 60%;
-    height: 50%;
+    width: 90%;
+    height: 60%;
+    padding: 0 200px 0 200px;
 }
 
 .enunc {
     color: #495d5c;
+    /* max-width: 100%; */
     border-radius: 5px;
     font-size: 4rem;
     background-color: #ffff;
-    text-wrap: nowrap;
+    /* text-wrap: nowrap; */
+    text-align: center;
 }
 
 .logoProj {

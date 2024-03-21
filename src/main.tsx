@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import DesejaContinuar from './pages/desejaContinuar/DesejaContinuar.tsx'
-import TemCerteza from './pages/desejaContinuar2/TemCerteza.tsx'
+import DesejaContinuar from './pages/continuarMedio/DesejaContinuar.tsx'
+import TemCerteza from './pages/certezaMedio/TemCerteza.tsx'
 import GameOver from './pages/gameOver/GameOver.tsx'
 import Home from './pages/home/Home.tsx'
 import HomeGame from './pages/homeGame/HomeGame.tsx'
@@ -15,7 +15,9 @@ import RdStation from './pages/rdStation/RdStation.tsx'
 import SorteioPremio from './pages/sorteioPremio/SorteioPremio.tsx'
 import TelaDificuldade from './pages/telaDificuldade/TelaDificuldade.tsx'
 import TelaDificuldadeMedio from './pages/telaDificuldadeMedio/TelaDificuldadeMedio.tsx'
-import TelaVencedor from './pages/telaVencedor/TelaVencedor.tsx'
+import TemCertezaHard from './pages/certezaHard/TemCertezaHard.tsx'
+import DesejaContinuarHard from './pages/continuarHard/DesejaContinuarHard.tsx'
+import TelaDificuldadeHard from './pages/telaDificuldadeHard/TelaDificuldadeHard.tsx'
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -52,20 +54,26 @@ const router = createBrowserRouter([
     path: '/really',
     element: <TemCerteza />
   }, {
+    path: '/continue-hard',
+    element: <DesejaContinuarHard />
+  }, {
+    path: '/really-hard',
+    element: <TemCertezaHard />
+  }, {
     path: '/game-over',
     element: <GameOver />
   }, {
     path: '/sorteio-premio',
     element: <SorteioPremio />
   }, {
-    path: '/WINNER',
-    element: <TelaVencedor />
-  }, {
     path: '/dificuldade',
     element: <TelaDificuldade />
   }, {
     path: '/dificuldade-media',
     element: <TelaDificuldadeMedio />
+  }, {
+    path: '/dificuldade-hard',
+    element: <TelaDificuldadeHard />
   }
 ])
 

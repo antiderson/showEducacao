@@ -1,4 +1,5 @@
 .containerMain {
+    align-items: center;
     background-image: url('../../assets/background.png');
     background-position: center;
     background-size: cover;
@@ -7,8 +8,6 @@
     height: 100vh;
     justify-content: center;
     padding-bottom: 60px;
-
-    align-items: center;
 }
 
 .containerSec {
@@ -19,7 +18,6 @@
     flex-direction: column;
     height: 50%;
     justify-content: center;
-    /* margin: auto; */
     margin-top: 7%;
     padding: 10% 4%;
     width: 35%;
@@ -48,11 +46,8 @@
     color: #ffffff;
     font-size: 50px;
     font-weight: bold;
-    /* height: 60px; */
     margin: 4px 2px;
     text-align: center;
-
-    /* margin-right: auto; */
 }
 
 .logoProj {
@@ -62,16 +57,14 @@
 }
 
 .endLine {
-    margin-top: 5%;
-    /* background-color: rgb(77, 120, 120); */
     display: flex;
-    width: 100%;
     justify-content: flex-end;
+    margin-top: 5%;
+    width: 100%;
 }
 
-.testediv{
+.testediv {
     display: flex;
-    /* background-color: rgb(96, 35, 35); */
-    width: 55%;
     justify-content: space-between;
+    width: 55%;
 }
