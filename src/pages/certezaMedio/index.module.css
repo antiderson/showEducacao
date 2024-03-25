@@ -1,0 +1,60 @@
+.all {
+    align-items: center;
+    background-image: url('../../assets/background.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.cont {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+}
+
+.ask{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #595959;
+    width: 80%;
+    /* height: 40%; */
+    padding: 6% 14% 6% 14% ;
+}
+
+.text{
+    color: #495d5c;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.nav{
+    width: 80%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnS{
+    background-color:#41cfff;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 150px;
+}
+
+.btnN{
+    background-color:#ff3a35;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 150px;
+}

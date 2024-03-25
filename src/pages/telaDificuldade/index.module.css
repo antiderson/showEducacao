@@ -1,0 +1,42 @@
+.containerMain {
+    background-image: url('../../assets/background.png');
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.containerSec {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 40px;
+    border: 2px solid #ffffff80;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 40%;
+    padding: 2% 4% 2% 4%;
+    box-shadow: 0 0 5px #595959;
+}
+
+.fases {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    color: white
+}
+
+.logo{
+    margin-top: 6%;
+    width: 98%;
+    display: flex;
+    justify-content: flex-end;
+}
+.logoProj{
+    height: 150px;
+    margin-top: 30px;
+}

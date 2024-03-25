@@ -1,0 +1,42 @@
+.background{
+    height: 100vh;
+    background-image: url('../../assets/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.logo{
+    /* padding-top: 3%; */
+    width: 100%;
+    max-width: 1200px;
+    margin:  auto;
+    display: block;
+}
+
+.init{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.testediv{
+    margin-top: 8%;
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+}
+
+.btnInit{
+    font-size: 4rem;
+    font-weight: bold;
+    background-color:#ffa013;
+    color: #ffff;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
+
+.logoGroup{
+    width: 200px;
+}

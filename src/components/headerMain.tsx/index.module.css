@@ -1,0 +1,42 @@
+.cont {
+    width: 92%;
+    display: flex;
+    margin: auto;
+    margin-top: 2%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.text {
+    color: #404040;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 68px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.marcaDiv {
+    background-color: #d3d3d3;
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    height: 100px;
+    overflow: hidden;
+    width: 100px;
+}
+
+.logo {
+    height: 54px;
+    object-fit: cover;
+    width: 100px;
+}
+
+.text2 {
+    color: #247de4;
+    margin-top: 20px;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 20.3px;
+    font-weight: 400;
+    line-height: normal;
+}

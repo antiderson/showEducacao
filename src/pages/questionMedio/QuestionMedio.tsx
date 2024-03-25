@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import CardResposta from '../../components/cardResposta/CardResposta';
-import questoes from '../../services/Questoes';
-import styles from './index.module.css';
-import logo from '../../assets/logo-game.png';
+import { useEffect, useState } from "react";
+import CardResposta from "../../components/cardResposta/CardResposta";
+import React from "react";
+import questoes from "../../services/Questoes";
+import styles from '../question/index.module.css'
+import logo from '../../assets/logo-game.png'
 
-interface Questao {
+interface QuestionMedio {
     id: number;
     enunciado: string;
     alternativas: Alternativa[];
@@ -16,55 +17,56 @@ interface Alternativa {
     correta: boolean;
 }
 
-export default function QuestionEasy() {
-    const [perguntasSelecionadas, setPerguntasSelecionadas] = useState<Questao[]>([]);
+export default function QuestionMedio() {
+    const [perguntasSelecionadas, setPerguntasSelecionadas] = useState<QuestionMedio[]>([]);
     const [indiceAtual, setIndiceAtual] = useState<number>(0);
-    const [respostaErrada, setRespostaErrada] = useState<boolean>(false); //controle de resposta para ver se ta erradao
+    const [respostaErrada, setRespostaErrada] = useState<boolean>(false);
 
-    // Método para selecionar aleatoriamente um número específico de perguntas
-    const selecionarPerguntasAleatorias = (perguntas: Questao[], quantidade: number) => {
-        const perguntasAleatorias: Questao[] = [];
+    const selecionarPerguntasAleatorias = (perguntas: QuestionMedio[], quantidade: number) => {
+        const perguntasAleatorias: QuestionMedio[] = [];
         const indicesSelecionados: number[] = [];
 
         while (perguntasAleatorias.length < quantidade) {
             const indice = Math.floor(Math.random() * perguntas.length);
 
             if (!indicesSelecionados.includes(indice)) {
-                perguntasAleatorias.push(perguntas[indice]);
-                indicesSelecionados.push(indice);
+                const indice = Math.floor(Math.random() * perguntas.length);
+
+                if (!indicesSelecionados.includes(indice)) {
+                    perguntasAleatorias.push(perguntas[indice]);
+                    indicesSelecionados.push(indice);
+                }
             }
         }
         setPerguntasSelecionadas(perguntasAleatorias);
     };
 
-    // Método para avançar para a próxima questão
     const proximaQuestao = () => {
         if (indiceAtual < perguntasSelecionadas.length - 1) {
             setIndiceAtual(indiceAtual + 1);
         } else {
             alert('Você respondeu todas as perguntas!');
+
             const todasCorretas = perguntasSelecionadas.every((questao) =>
                 questao.alternativas.some((alternativa) => alternativa.correta)
             );
 
-            // Se todas estiverem corretas, redireciona para outra tela
             if (todasCorretas) {
-                window.location.href = '/continue';
+                window.location.href = '/continue-hard';
             }
         }
     };
-
     const renderQuestaoAtual = () => {
         const questaoAtual = perguntasSelecionadas[indiceAtual];
         if (!questaoAtual) {
             return null;
         }
 
-        const handleRespostaSelecionada = (correta: boolean) => {
-            if (!correta) {
+        const handleRespostaSelecionada = (correta: boolean) =>{
+            if(!correta){
                 setRespostaErrada(true);
             }
-        };
+        }
         return (
             <div className={styles.all} key={questaoAtual.id}>
                 <div className={styles.cont}>
@@ -77,7 +79,6 @@ export default function QuestionEasy() {
                             correta={alternativa.correta}
                         />
                     ))}
-
                 </div>
                 <div className={styles.endLine}>
                     <div className={styles.testediv}>
@@ -89,23 +90,22 @@ export default function QuestionEasy() {
         );
     };
 
-    useEffect(() => {
-        if (respostaErrada) {
-            const timeoutld = setTimeout(() => {
+    useEffect(() =>{
+        if(respostaErrada){
+            const timeoutld = setTimeout(() =>{
                 window.location.href = '/game-over';
             }, 2000);
             return () => clearTimeout(timeoutld);
         }
-    }, [respostaErrada]);
+    })
 
-    // método pra selecionar aleatoriamente as perguntas 
-    useEffect(() => {
-        selecionarPerguntasAleatorias(questoes.facil, 5); // Selecionar 5 perguntas fáceis aleatórias
+    React.useEffect(() => {
+        selecionarPerguntasAleatorias(questoes.medio, 5);
     }, []);
 
     return (
         <div>
             {renderQuestaoAtual()}
         </div>
-    );
+    )
 }

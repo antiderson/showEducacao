@@ -1,0 +1,70 @@
+.containerMain {
+    align-items: center;
+    background-image: url('../../assets/background.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+.containerSec {
+    align-items: flex-start;
+    border: 2px solid #ffffff80;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: center;
+    margin-top: 7%;
+    padding: 10% 4%;
+    width: 35%;
+}
+
+.titleInput {
+    color: #ffff;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.input {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #595959;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.btn {
+    align-self: center;
+    background-color: #ffa013;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 4px 2px;
+    text-align: center;
+}
+
+.logoProj {
+    height: 150px;
+    margin-top: 30px;
+    width: 250px;
+}
+
+.endLine {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5%;
+    width: 100%;
+}
+
+.testediv {
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+}
