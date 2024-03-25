@@ -19,6 +19,7 @@ interface Alternativa {
 export default function QuestionHard() {
     const [perguntasSelecionadas, setPerguntasSelecionadas] = useState<Questao[]>([]);
     const [indiceAtual, setIndiceAtual] = useState<number>(0);
+    const [respostaErrada, setRespostaErrada] = useState<boolean>(false);
 
     const selecionarPerguntasAleatorias = (perguntas: Questao[], quantidade: number) => {
         const perguntasAleatorias: Questao[] = [];
@@ -56,6 +57,12 @@ export default function QuestionHard() {
         if (!questaoAtual) {
             return null;
         }
+    
+    const handleRespostaSelecionada = (correta: boolean) =>{
+        if(!correta){
+            setRespostaErrada(true);
+        }   
+    }
 
         return (
             <div className={styles.all} key={questaoAtual.id}>
@@ -65,13 +72,7 @@ export default function QuestionHard() {
                         <CardResposta
                             key={alternativa.id}
                             content={alternativa.texto}
-                            onClick={() => {
-                                if (alternativa.correta) {
-                                    console.log('Resposta correta!');
-                                } else {
-                                    console.log("Resposta Incorret!");
-                                }
-                            }}
+                            onClick={() => handleRespostaSelecionada(alternativa.correta)}
                             correta={alternativa.correta}
                         />
                     ))}
@@ -85,6 +86,15 @@ export default function QuestionHard() {
             </div>
         );
     };
+
+    useEffect(() =>{
+        if(respostaErrada){
+            const timeoutld = setTimeout(() => {
+                window.location.href = '/game-over';
+            }, 2000);
+            return () => clearTimeout(timeoutld);
+        }
+    })
 
     useEffect(() => {
         selecionarPerguntasAleatorias(questoes.dificil, 5);

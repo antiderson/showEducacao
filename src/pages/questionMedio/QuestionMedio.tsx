@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardResposta from "../../components/cardResposta/CardResposta";
 import React from "react";
 import questoes from "../../services/Questoes";
@@ -20,6 +20,7 @@ interface Alternativa {
 export default function QuestionMedio() {
     const [perguntasSelecionadas, setPerguntasSelecionadas] = useState<QuestionMedio[]>([]);
     const [indiceAtual, setIndiceAtual] = useState<number>(0);
+    const [respostaErrada, setRespostaErrada] = useState<boolean>(false);
 
     const selecionarPerguntasAleatorias = (perguntas: QuestionMedio[], quantidade: number) => {
         const perguntasAleatorias: QuestionMedio[] = [];
@@ -60,6 +61,12 @@ export default function QuestionMedio() {
         if (!questaoAtual) {
             return null;
         }
+
+        const handleRespostaSelecionada = (correta: boolean) =>{
+            if(!correta){
+                setRespostaErrada(true);
+            }
+        }
         return (
             <div className={styles.all} key={questaoAtual.id}>
                 <div className={styles.cont}>
@@ -68,13 +75,7 @@ export default function QuestionMedio() {
                         <CardResposta
                             key={alternativa.id}
                             content={alternativa.texto}
-                            onClick={() => {
-                                if (alternativa.correta) {
-                                    console.log('Resposta correta');
-                                } else {
-                                    console.log('Resposta errada');
-                                }
-                            }}
+                            onClick={() => handleRespostaSelecionada(alternativa.correta)}
                             correta={alternativa.correta}
                         />
                     ))}
@@ -88,6 +89,15 @@ export default function QuestionMedio() {
             </div>
         );
     };
+
+    useEffect(() =>{
+        if(respostaErrada){
+            const timeoutld = setTimeout(() =>{
+                window.location.href = '/game-over';
+            }, 2000);
+            return () => clearTimeout(timeoutld);
+        }
+    })
 
     React.useEffect(() => {
         selecionarPerguntasAleatorias(questoes.medio, 5);

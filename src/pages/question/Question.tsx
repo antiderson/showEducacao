@@ -19,6 +19,7 @@ interface Alternativa {
 export default function QuestionEasy() {
     const [perguntasSelecionadas, setPerguntasSelecionadas] = useState<Questao[]>([]);
     const [indiceAtual, setIndiceAtual] = useState<number>(0);
+    const [respostaErrada, setRespostaErrada] = useState<boolean>(false); //controle de resposta para ver se ta erradao
 
     // Método para selecionar aleatoriamente um número específico de perguntas
     const selecionarPerguntasAleatorias = (perguntas: Questao[], quantidade: number) => {
@@ -42,8 +43,6 @@ export default function QuestionEasy() {
             setIndiceAtual(indiceAtual + 1);
         } else {
             alert('Você respondeu todas as perguntas!');
-
-            // Verifica se todas as respostas estão corretas
             const todasCorretas = perguntasSelecionadas.every((questao) =>
                 questao.alternativas.some((alternativa) => alternativa.correta)
             );
@@ -60,6 +59,12 @@ export default function QuestionEasy() {
         if (!questaoAtual) {
             return null;
         }
+
+        const handleRespostaSelecionada = (correta: boolean) => {
+            if (!correta) {
+                setRespostaErrada(true);
+            }
+        };
         return (
             <div className={styles.all} key={questaoAtual.id}>
                 <div className={styles.cont}>
@@ -68,18 +73,11 @@ export default function QuestionEasy() {
                         <CardResposta
                             key={alternativa.id}
                             content={alternativa.texto}
-                            onClick={() => {
-                                if (alternativa.correta) {
-                                    console.log('Resposta correta!');
-                                    // logica pra mdar cor
-                                } else {
-                                    console.log('Resposta incorreta. Tente novamente.');
-                                    // msm logica 
-                                }
-                            }}
+                            onClick={() => handleRespostaSelecionada(alternativa.correta)}
                             correta={alternativa.correta}
                         />
                     ))}
+
                 </div>
                 <div className={styles.endLine}>
                     <div className={styles.testediv}>
@@ -90,6 +88,15 @@ export default function QuestionEasy() {
             </div>
         );
     };
+
+    useEffect(() => {
+        if (respostaErrada) {
+            const timeoutld = setTimeout(() => {
+                window.location.href = '/game-over';
+            }, 2000);
+            return () => clearTimeout(timeoutld);
+        }
+    }, [respostaErrada]);
 
     // método pra selecionar aleatoriamente as perguntas 
     useEffect(() => {

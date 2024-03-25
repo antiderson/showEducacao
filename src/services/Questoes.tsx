@@ -129,7 +129,7 @@ const questoes: Questoes = {
                 },
                 {
                     "id": 2,
-                    "texto": "Catelo Branco",
+                    "texto": "Castelo Branco",
                     "correta": false
                 },
                 {
